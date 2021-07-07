@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	console.log('そのidのnameを表示する');
+	let requestURL = "https://raw.githubusercontent.com/asakon/js-drill/master/1-1.json";
+	let request = new XMLHttpRequest();
+	request.open('GET', requestURL);
+	request.responseType = 'json';
+	request.send();
+	request.onload = function() {
+		const thisJson = request.response;
+
+	let queryId = 2;
+	showConsoleName(thisJson, queryId);
+	}
+	function showConsoleName(obj, objId) {
+		for(var item in obj) {
+			if (objId == obj[item]['id']) {
+				console.log(obj[item]['name']);
+				return;
+			}
+		}
+
+		// 一致しないとき
+		console.log('id:' + objId + 'は、ありませんでした');
+		return null;
+	}
+</script>
+</html>
