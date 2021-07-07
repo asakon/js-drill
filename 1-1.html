@@ -18,12 +18,21 @@
 	request.send();
 	request.onload = function() {
 		const thisJson = request.response;
-		showConsoleName(thisJson);
+
+	let queryId = 2;
+	showConsoleName(thisJson, queryId);
 	}
-	function showConsoleName(obj) {
+	function showConsoleName(obj, objId) {
 		for(var item in obj) {
-			console.log(obj[item]['name']);
+			if (objId == obj[item]['id']) {
+				console.log(obj[item]['name']);
+				return;
+			}
 		}
+
+		// 一致しないとき
+		console.log('id:' + objId + 'は、ありませんでした');
+		return null;
 	}
 </script>
 </html>
