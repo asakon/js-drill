@@ -8,3 +8,6 @@ https://developer.mozilla.org/ja/docs/Learn/JavaScript/Objects/JSON
 
 忘れやすい、複雑なJSONの要素をfor...in文で取り出す方法 - Feel Physics Backyard
 https://www.weed.nagoya/entry/2016/05/11/105145
+
+Array.prototype.some() - JavaScript | MDN
+https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/some
